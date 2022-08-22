@@ -7,6 +7,7 @@ header img {
 
 main div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -14,20 +15,19 @@ main div {
 
 main section {
   width: 100%;
-  height: 20rem;
+}
+
+.sectionBody {
+  width: 100%;
+  height: 10rem;
   background: whitesmoke;
   border-radius: 1.25rem;
 }
 
-.sectionIntro {
-  padding: 1rem;
-  display: flex;
-  justify-content: flex-start;
-}
-
 
 main button {
-  font-size: 1rem;
+  font-size: 1.25rem;
+  font-weight: 800;
   background: var(--accent-color);
   border: none;
   border-radius: 1.25rem;
