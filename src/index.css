@@ -1,4 +1,5 @@
 /* ------------------------------ default setting */
+
 * {
   padding: 0;
   margin: 0;
@@ -12,10 +13,13 @@
   --primary-color: #192851;
   --accent-color: #68d9cf;
   --brand-color: #613DCB;
+
+  --positive-value: rgb(28, 120, 0);
+  --negative-value: rgb(205, 0, 0);
 }
 
 body {
-  background: var(--primary-color);
+  background: var(--subbase-color);
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -34,8 +38,7 @@ li,
 button,
 div,
 span {
-  padding: 0;
-  margin: 0;
+
   color: var(--primary-color);
   font-family: Universal Sans, sans-serif;
   font-weight: 400;
@@ -52,6 +55,7 @@ span {
   flex-direction: column;
   gap: 2rem;
   border-radius: 1.25rem;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
 @media (max-width: 750px) {

@@ -7,6 +7,16 @@ header img {
   left: -1rem;
 }
 
+
+/* ------------------------------ footer */
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+}
+
 /* ------------------------------ main */
 
 main {
@@ -97,6 +107,11 @@ ul li {
   overflow-y: scroll;
 }
 
+#weeklyRoundup .sectionBody span:nth-child(2) {
+  color: var(--positive-value);
+
+}
+
 #savingsGoal .sectionBody {
   height: 5rem;
   display: flex;
@@ -117,8 +132,14 @@ ul li {
   align-items: center;
 }
 
+.utility span {
+  padding-left: .25rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
 #dashboard button {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 800;
   background: var(--accent-color);
   border: none;
