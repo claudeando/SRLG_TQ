@@ -12,22 +12,6 @@ main {
   gap: 2.5rem;
 }
 
-.dashboardTop {}
-
-.dashboardBtm {
-  display: flex;
-  flex-direction: row;
-  gap: 2.5rem;
-}
-
-@media (max-width: 750px) {
-  .dashboardBtm {
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-
-}
-
 main section {
   width: 100%;
 }
@@ -51,11 +35,25 @@ main h2 {
   display: flex;
 }
 
+.dashboardBtm {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+}
+
+@media (max-width: 750px) {
+  .dashboardBtm {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+}
+
 .dashboardBtm .sectionBody {
   width: 100%;
   height: 10rem;
   display: flex;
 }
+
 
 .dashboardBtm #weeklyRoundup .sectionBody {
   flex-direction: column;
