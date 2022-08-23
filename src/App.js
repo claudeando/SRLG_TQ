@@ -83,59 +83,55 @@ function App() {
     <section id="dashboard">
       <Header />
       <main>
-        <div className="dashboardTop">
-          <section id="transactionFeed">
-            <h2>Transaction Feed</h2>
-            <div className="line"></div>
+        <section id="transactionFeed">
+          <h2>Transaction Feed</h2>
+          <div className="line"></div>
 
-            <div className="sectionBody">
-              <ul>
-                {transactions !== null && transactions.map((item) =>
-                  <li>
-                    <span>{item.counterPartyName}</span>
-                    <span> - £{item.amount.minorUnits / 100}</span>
-                    <span><Moment format="MMM DD, YYYY">{item.transactionTime}</Moment></span>
-                  </li>
-                )}
-              </ul>
-            </div>
-          </section>
-        </div>
+          <div className="sectionBody">
+            <ul>
+              {transactions !== null && transactions.map((item) =>
+                <li>
+                  <span><Moment format="MMM DD">{item.transactionTime}</Moment></span>
+                  <span>{item.counterPartyName}</span>
+                  <span> - £{item.amount.minorUnits / 100}</span>
+                </li>
+              )}
+            </ul>
+          </div>
+        </section>
 
-        <div className="dashboardBtm">
-          <section id="weeklyRoundup">
-            <h2>Weekly Roundup</h2>
-            <div className="line"></div>
+        <section id="weeklyRoundup">
+          <h2>Weekly Roundup</h2>
+          <div className="line"></div>
 
-            <div className="sectionBody">
-              <ul>
-                {transactions !== null && transactions.map((item, index) =>
-                  <li>
-                    <span>{item.counterPartyName}</span>
-                    <span> + £{roundUps[index]} </span>
-                  </li>
-                )}
-              </ul>
-              <div className="utility">
-                {total !== null && <p>Weekly Total: £{total}</p>}
-                <button type="button" onClick={() => transfer()}>Transfer</button>
-                {/* here was no POST method / endpoint in the API documentation */}
-              </div>
-            </div>
+          <div className="sectionBody">
+            <ul>
+              {transactions !== null && transactions.map((item, index) =>
+                <li>
+                  <span>{item.counterPartyName}</span>
+                  <span> + £{roundUps[index]} </span>
+                </li>
+              )}
+            </ul>
+          </div>
+          <div className="utility">
+            {total !== null && <p>Weekly Total: £{total}</p>}
+            <button type="button" onClick={() => transfer()}>Transfer</button>
+            {/* here was no POST method / endpoint in the API documentation */}
+          </div>
+        </section>
 
-          </section>
+        <section id="savingsGoal">
+          <h2>Savings Goal</h2>
+          <div className="line"></div>
 
-          <section id="savingsGoal">
-            <h2>Savings Goal</h2>
-            <div className="line"></div>
+          <div className="sectionBody">
+            <span>£</span>
+            <div className="savedAmount">{savedAmount}</div>
+            <span>Saved</span>
+          </div>
+        </section>
 
-            <div className="sectionBody">
-              <span>£</span>
-              <div className="savedAmount">{savedAmount}</div>
-              <span>Saved</span>
-            </div>
-          </section>
-        </div>
       </main >
     </section >
   );

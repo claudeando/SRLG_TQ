@@ -1,3 +1,5 @@
+/* ------------------------------ header */
+
 header img {
   width: 10rem;
   position: relative;
@@ -5,15 +7,51 @@ header img {
   left: -1rem;
 }
 
+/* ------------------------------ main */
+
 main {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: repeat(2, 1fr);
+  grid-gap: 3.5rem;
 }
 
-main section {
-  width: 100%;
+#transactionFeed {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+
+#weeklyRoundUp {
+  grid-column: 2/ 3;
+  grid-row: 1/2;
+}
+
+#savingsGoal {
+  grid-column: 2/ 3;
+  grid-row: 2/3;
+}
+
+@media (max-width: 750px) {
+  main {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: repeat(3, 1fr);
+  }
+
+  #transactionFeed {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  #weeklyRoundUp {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  #savingsGoal {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
 }
 
 main h2 {
@@ -22,52 +60,52 @@ main h2 {
   margin-bottom: 1rem;
 }
 
-.line {
+main .line {
   width: 100%;
   height: 0.1rem;
   background: var(--primary-color);
   margin-bottom: 1rem;
 }
 
-.dashboardTop .sectionBody {
+.sectionBody {
   width: 100%;
-  height: 15rem;
   display: flex;
 }
 
-.dashboardBtm {
-  display: flex;
-  flex-direction: row;
-  gap: 2.5rem;
-}
-
-@media (max-width: 750px) {
-  .dashboardBtm {
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-}
-
-.dashboardBtm .sectionBody {
+ul {
   width: 100%;
-  height: 10rem;
+  padding: .5rem;
+  padding-right: 1.5rem;
   display: flex;
-}
-
-
-.dashboardBtm #weeklyRoundup .sectionBody {
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
+  overflow: scroll;
 }
 
-.dashboardBtm #savingsGoal .sectionBody {
-  flex-direction: row;
-  justify-content: center;
+ul li {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-size: 1rem;
+}
+
+#weeklyRoundup .sectionBody {
+  display: inline-block;
+  flex-direction: column;
+  height: 6.5rem;
+  margin-bottom: 1rem;
+  overflow-y: scroll;
+}
+
+#savingsGoal .sectionBody {
+  height: 5rem;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
 }
 
-.dashboardBtm #savingsGoal .sectionBody span {
+#savingsGoal .sectionBody span {
   position: relative;
   bottom: -1rem;
 }
@@ -94,5 +132,5 @@ main h2 {
 }
 
 .savedAmount {
-  font-size: 5rem !important;
+  font-size: 4.5rem !important;
 }
