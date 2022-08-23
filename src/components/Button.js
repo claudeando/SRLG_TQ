@@ -1,8 +1,8 @@
 import '../App.css';
 
-function Button() {
+function Button({ setSavedAmount, transfer }) {
     return (
-        <button type="button">Transfer</button>
+        <button type="button" onClick={() => transfer()}>Transfer</button>
     )
 }
 
