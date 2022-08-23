@@ -58,5 +58,6 @@ main {
 @media (max-width: 750px) {
   main {
     width: 100%;
+    margin: 0;
   }
 }

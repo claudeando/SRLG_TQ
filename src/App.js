@@ -44,9 +44,23 @@ function App() {
   }, [account]);
 
   //To-do - transactions where direction: "OUT"
-  function calculateRoundUp() {
+  function calculateRoundUp(transactionsList) {
 
+    let roundUp = 0;
+    transactionsList.forEach(element => {
+      //Assuming currency is always GBP for now
+      let amt = element.amount.minorUnits / 100; // double check what minor units means
+      //Calculate difference from nearest pound and add to round up
+
+    });
+    return roundUp
   }
+
+  useEffect(() => {
+    if (transactions !== null) {
+      calculateRoundUp();
+    }
+  }, [transactions]);
 
   return (
     <>
