@@ -1,3 +1,3 @@
-This is a response technical question by Starling Bank.
+A transaction widget created for Starling Bank UK.
 
-Created by Claude Ando.
+Written in React, styled with CSS, with Starling Bank API.
